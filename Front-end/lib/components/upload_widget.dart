@@ -3,8 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'upload_model.dart';
 export 'upload_model.dart';
 
@@ -42,15 +40,16 @@ class _UploadWidgetState extends State<UploadWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, 0.0),
+      alignment: const AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
+            alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 75.0, 0.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(0.0, 75.0, 0.0, 0.0),
               child: Text(
                 'File Upload',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -61,7 +60,7 @@ class _UploadWidgetState extends State<UploadWidget> {
                   shadows: [
                     Shadow(
                       color: FlutterFlowTheme.of(context).zaffre,
-                      offset: Offset(2.0, 2.0),
+                      offset: const Offset(2.0, 2.0),
                       blurRadius: 4.0,
                     )
                   ],
@@ -70,7 +69,8 @@ class _UploadWidgetState extends State<UploadWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(32.0, 70.0, 32.0, 0.0),
+            padding:
+                const EdgeInsetsDirectional.fromSTEB(32.0, 70.0, 32.0, 0.0),
             child: Text(
               'Please upload the intended seismic activity files as a single ZIP folder (.zip format).The folder should \ncontain the necessary data files for analysis.Once uploaded,our algorithm will\n process the data to detect any seismic activity.',
               textAlign: TextAlign.center,
@@ -82,7 +82,7 @@ class _UploadWidgetState extends State<UploadWidget> {
                     shadows: [
                       Shadow(
                         color: FlutterFlowTheme.of(context).zaffre,
-                        offset: Offset(2.0, 2.0),
+                        offset: const Offset(2.0, 2.0),
                         blurRadius: 2.0,
                       )
                     ],
@@ -91,7 +91,7 @@ class _UploadWidgetState extends State<UploadWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 final selectedFiles = await selectFiles(
@@ -125,8 +125,10 @@ class _UploadWidgetState extends State<UploadWidget> {
               options: FFButtonOptions(
                 width: 350.0,
                 height: 70.0,
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconPadding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleMedium.override(
                       fontFamily: 'Roboto',
@@ -140,13 +142,13 @@ class _UploadWidgetState extends State<UploadWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
             child: FFButtonWidget(
               onPressed: () async {
                 context.pushNamed(
                   'LoadingPage',
                   extra: <String, dynamic>{
-                    kTransitionInfoKey: TransitionInfo(
+                    kTransitionInfoKey: const TransitionInfo(
                       hasTransition: true,
                       transitionType: PageTransitionType.fade,
                       duration: Duration(milliseconds: 1000),
@@ -158,8 +160,10 @@ class _UploadWidgetState extends State<UploadWidget> {
               options: FFButtonOptions(
                 width: 200.0,
                 height: 50.0,
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                iconPadding:
+                    const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                 color: FlutterFlowTheme.of(context).primary,
                 textStyle: FlutterFlowTheme.of(context).titleMedium.override(
                       fontFamily: 'Roboto',

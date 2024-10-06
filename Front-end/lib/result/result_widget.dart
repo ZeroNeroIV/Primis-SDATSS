@@ -2,8 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'result_model.dart';
 export 'result_model.dart';
 
@@ -57,16 +55,16 @@ class _ResultWidgetState extends State<ResultWidget> {
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
+              alignment: const AlignmentDirectional(0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 150.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 150.0, 0.0, 0.0),
                       child: Text(
                         'Analysis Complete',
                         style: FlutterFlowTheme.of(context)
@@ -80,10 +78,10 @@ class _ResultWidgetState extends State<ResultWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
+                    alignment: const AlignmentDirectional(0.0, 1.0),
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 75.0, 24.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          24.0, 75.0, 24.0, 0.0),
                       child: Text(
                         'The seismic data has been analyzed. Below is the result of the seismic activity \ndetection. You can download a detailed report as a CSV file.',
                         textAlign: TextAlign.center,
@@ -97,10 +95,10 @@ class _ResultWidgetState extends State<ResultWidget> {
                     ),
                   ),
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 75.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 75.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () {
                           print('Button pressed ...');
@@ -109,9 +107,9 @@ class _ResultWidgetState extends State<ResultWidget> {
                         options: FFButtonOptions(
                           width: 200.0,
                           height: 50.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -129,8 +127,8 @@ class _ResultWidgetState extends State<ResultWidget> {
                   Opacity(
                     opacity: 0.8,
                     child: Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(35.0, 20.0, 35.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          35.0, 20.0, 35.0, 0.0),
                       child: Text(
                         '*Note: Click the button to download the detailed CSV file with the analysis results.',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(

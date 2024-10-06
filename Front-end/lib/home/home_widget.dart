@@ -41,15 +41,15 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 1110.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 240.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 240.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 1110.0.ms,
-            begin: Offset(1.0, 1.0),
-            end: Offset(2.3, 2.3),
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(2.3, 2.3),
           ),
         ],
       ),
@@ -68,8 +68,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 1000.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 10000.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 10000.0),
           ),
         ],
       ),
@@ -81,8 +81,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 410.0.ms,
-            begin: Offset(0.0, 1000.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 1000.0),
+            end: const Offset(0.0, 0.0),
           ),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -120,11 +120,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         backgroundColor: Colors.black,
         body: SafeArea(
           top: true,
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: double.infinity,
             child: Stack(
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: const AlignmentDirectional(0.0, -1.0),
               children: [
                 Container(
                   width: double.infinity,
@@ -132,12 +132,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       image: Image.asset(
                         'assets/images/earth_bottom_image.jpg',
                       ).image,
                     ),
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       colors: [Colors.black, Colors.white],
                       stops: [0.0, 1.0],
                       begin: AlignmentDirectional(0.0, -1.0),
@@ -149,10 +149,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   animationsMap['containerOnActionTriggerAnimation']!,
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, -1.0),
+                  alignment: const AlignmentDirectional(0.0, -1.0),
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 250.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        16.0, 0.0, 16.0, 250.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -160,9 +160,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       children: [
                         Flexible(
                           child: Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 55.0, 0.0, 0.0),
                               child: Text(
                                 'Welcome to',
@@ -181,7 +181,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         ),
                         Flexible(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 0.0),
                             child: GradientText(
                               'Quaker!',
@@ -195,7 +195,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                 shadows: [
                                   Shadow(
                                     color: FlutterFlowTheme.of(context).zaffre,
-                                    offset: Offset(2.0, 2.0),
+                                    offset: const Offset(2.0, 2.0),
                                     blurRadius: 3.0,
                                   )
                                 ],
@@ -210,9 +210,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 20.0, 190.0, 20.0, 0.0),
                             child: GradientText(
                               'Quaker lets you explore seismic activity on distant worlds. Upload seismic data from space missions like Apollo and Mars InSight, \nand our advanced detection algorithm will analyze the data to determine if seismic activity occurred. \nWith just a few clicks, uncover the secrets hidden in planetary seismic records!',
@@ -229,7 +229,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       Shadow(
                                         color: FlutterFlowTheme.of(context)
                                             .tertiary,
-                                        offset: Offset(2.0, 2.0),
+                                        offset: const Offset(2.0, 2.0),
                                         blurRadius: 2.0,
                                       )
                                     ],
@@ -245,9 +245,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.0, 1.0),
+                          alignment: const AlignmentDirectional(0.0, 1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 75.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -280,10 +280,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               options: FFButtonOptions(
                                 width: 200.0,
                                 height: 50.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding:
+                                    const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -307,7 +308,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 wrapWithModel(
                   model: _model.uploadModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: Hero(
+                  child: const Hero(
                     tag: 'up',
                     transitionOnUserGestures: true,
                     child: Material(

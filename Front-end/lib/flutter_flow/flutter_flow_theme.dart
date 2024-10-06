@@ -153,16 +153,16 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFF44336);
   late Color info = const Color(0xFF2196F3);
 
-  late Color richBlackFOGRA39 = Color(0xFF070707);
-  late Color blue = Color(0xFF3A28DE);
-  late Color turquoise = Color(0xFF34D1BF);
-  late Color cultured = Color(0xFFEFEFEF);
-  late Color cerise = Color(0xFFD1345B);
-  late Color oxfordBlue = Color(0xFF011638);
-  late Color zaffre = Color(0xFF0D21A1);
-  late Color antiflashWhite = Color(0xFFEEF0F2);
-  late Color night = Color(0xFF141414);
-  late Color blackOlive = Color(0xFF3A3E3B);
+  late Color richBlackFOGRA39 = const Color(0xFF070707);
+  late Color blue = const Color(0xFF3A28DE);
+  late Color turquoise = const Color(0xFF34D1BF);
+  late Color cultured = const Color(0xFFEFEFEF);
+  late Color cerise = const Color(0xFFD1345B);
+  late Color oxfordBlue = const Color(0xFF011638);
+  late Color zaffre = const Color(0xFF0D21A1);
+  late Color antiflashWhite = const Color(0xFFEEF0F2);
+  late Color night = const Color(0xFF141414);
+  late Color blackOlive = const Color(0xFF3A3E3B);
 }
 
 abstract class Typography {
@@ -335,16 +335,16 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color error = const Color(0xFFE53935);
   late Color info = const Color(0xFF1E88E5);
 
-  late Color richBlackFOGRA39 = Color(0xFF070707);
-  late Color blue = Color(0xFF3A28DE);
-  late Color turquoise = Color(0xFF34D1BF);
-  late Color cultured = Color(0xFFEFEFEF);
-  late Color cerise = Color(0xFFD1345B);
-  late Color oxfordBlue = Color(0xFF011638);
-  late Color zaffre = Color(0xFF0D21A1);
-  late Color antiflashWhite = Color(0xFFEEF0F2);
-  late Color night = Color(0xFF141414);
-  late Color blackOlive = Color(0xFF3A3E3B);
+  late Color richBlackFOGRA39 = const Color(0xFF070707);
+  late Color blue = const Color(0xFF3A28DE);
+  late Color turquoise = const Color(0xFF34D1BF);
+  late Color cultured = const Color(0xFFEFEFEF);
+  late Color cerise = const Color(0xFFD1345B);
+  late Color oxfordBlue = const Color(0xFF011638);
+  late Color zaffre = const Color(0xFF0D21A1);
+  late Color antiflashWhite = const Color(0xFFEEF0F2);
+  late Color night = const Color(0xFF141414);
+  late Color blackOlive = const Color(0xFF3A3E3B);
 }
 
 extension TextStyleHelper on TextStyle {

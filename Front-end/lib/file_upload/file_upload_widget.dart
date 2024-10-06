@@ -1,10 +1,6 @@
 import '/components/upload_widget.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'file_upload_model.dart';
 export 'file_upload_model.dart';
 
@@ -47,7 +43,7 @@ class _FileUploadWidgetState extends State<FileUploadWidget> {
           child: Stack(
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, 1.0),
+                alignment: const AlignmentDirectional(0.0, 1.0),
                 child: Container(
                   width: double.infinity,
                   height: double.infinity,
@@ -55,22 +51,22 @@ class _FileUploadWidgetState extends State<FileUploadWidget> {
                     color: Colors.black,
                     image: DecorationImage(
                       fit: BoxFit.none,
-                      alignment: AlignmentDirectional(0.0, -1.83),
+                      alignment: const AlignmentDirectional(0.0, -1.83),
                       image: Image.asset(
                         'assets/images/wp6104077-iphone-black-earth-hd-wallpapers.jpg',
                       ).image,
                     ),
                     shape: BoxShape.rectangle,
                   ),
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: const AlignmentDirectional(0.0, 0.0),
                 child: wrapWithModel(
                   model: _model.uploadModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: Hero(
+                  child: const Hero(
                     tag: 'up',
                     transitionOnUserGestures: true,
                     child: Material(
