@@ -1,0 +1,109 @@
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+import matplotlib.pyplot as plt 
+
+# Load the catalog (ensure catalog is small enough for faster processing)
+cat_directory = './data/mars/training/catalogs/'
+cat_file = cat_directory + 'Mars_InSight_training_catalog_final.csv'
+catalog = pd.read_csv(cat_file)
+
+# Load a sample data file from the catalog
+data_directory = './data/mars/training/data/'
+sample_filename = catalog.iloc[0]['filename']
+csv_file = f'{data_directory}{sample_filename}'
+data = pd.read_csv(csv_file) 
+
+
+# Directory paths
+cat_directory = './data/mars/training/catalogs/'
+data_directory = './data/mars/training/data/'
+output_directory = './data/mars/training/output/'  # Updated output directory
+output_catalog_file = output_directory + 'Mars_InSight_prediction_catalog.csv'
+
+# Load the catalog
+cat_file = cat_directory + 'Mars_InSight_training_catalog_final.csv'
+catalog = pd.read_csv(cat_file)
+
+# Create a list to store the results
+results = []
+
+# Loop through the catalog entries
+for idx, row in catalog.iterrows():
+    sample_filename = row['filename']
+    csv_file = f'{data_directory}{sample_filename}'
+    
+    # Load the sample data
+    data = pd.read_csv(csv_file)
+
+    # Preprocessing: Select relevant features from the sample data
+    X = data[['rel_time(sec)', 'velocity(c/s)']]  # Using time-relative and velocity features
+    y = row['time_rel(sec)']  # Arrival time of the seismic event
+
+    # Feature engineering: Add additional features, like velocity change rate
+    data['velocity_diff'] = data['velocity(c/s)'].diff().fillna(0)
+
+    # Split the data into train and test sets
+    X_train, X_test, y_train, y_test = train_test_split(
+        data[['velocity(c/s)', 'velocity_diff']], [y]*len(data), test_size=0.2, random_state=42
+    )
+
+    # Scale the features
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+
+    # Model: Random Forest Regressor
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model.fit(X_train_scaled, y_train)
+
+    # Predictions
+    y_pred = model.predict(X_test_scaled)
+
+    # Evaluate the model
+    mae = mean_absolute_error(y_test, y_pred)
+    mse = mean_squared_error(y_test, y_pred)
+    print(f'Processing {sample_filename} - Mean Absolute Error: {mae}, Mean Squared Error: {mse}')
+
+    # Append the actual and predicted data to the results list
+    results.append({
+        'filename': sample_filename,
+        'time_abs': row['time_abs(%Y-%m-%dT%H:%M:%S.%f)'],  # Absolute time
+        'time_rel_true(sec)': y,  # True arrival time
+        'time_rel_pred(sec)': np.mean(y_pred),  # Predicted arrival time (use mean if there are multiple predictions)
+        'evid': row['evid']  # Event ID
+    })
+
+# Convert the results list to a DataFrame
+results_df = pd.DataFrame(results)
+
+# Save the results to a CSV file in the specified output directory
+results_df.to_csv(output_catalog_file, index=False)
+
+# Final message
+print(f'Catalog with predictions saved to {output_catalog_file}') 
+
+
+
+# Plot actual vs. predicted values
+plt.figure(figsize=(10, 6))
+
+# Plot actual data points (y_test)
+plt.plot(y_test, label='Actual', color='blue')
+
+# Plot predicted data points (y_pred)
+plt.plot(y_pred, label='Predicted', color='red', linestyle='--')
+
+# Add labels and title
+plt.xlabel('Sample index')
+plt.ylabel('Arrival Time (seconds)')
+plt.title('Actual vs Predicted Seismic Event Arrival Time')
+
+# Show legend
+plt.legend()
+
+# Display the plotaa 
+plt.show()
